@@ -1,15 +1,19 @@
-import { useState } from 'react'
+import React from 'react'
 import img from '../public/img.png' // this code will import the img
+import Signup from './Component/signup' // this code will import the signup component
+
 
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
     <>
         <img src={img} alt="" />
+        <Signup/>
+        <h1 className='text-3xl font-bold underline'/> 
     </>
   )
 }
 
-export default App
+export default App;
