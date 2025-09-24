@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import img from '../public/img.png'
 
 
 function App() {
@@ -6,7 +7,7 @@ function App() {
 
   return (
     <>
-            
+        <img src={img} alt="" />
     </>
   )
 }
