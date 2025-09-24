@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import img from '../public/img.png'
+import img from '../public/img.png' // this code will import the img
 
 
 function App() {
