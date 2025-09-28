@@ -35,7 +35,7 @@ function Header() {
             التسجيل
           </button>
           <button className="bg-red-500 text-white rounded-2xl px-4 py-2 font-bold text-2xl">
-            الاشتراك
+         الاشتراك
           </button>
         </div>
       </div>
@@ -46,10 +46,10 @@ function Header() {
       </div>
 
 
-
+      {/* الصوره الثانيه   */}
       <div className="absolute left-0 bottom-0">
-  <img className="w-200" src="1 (1).png" alt="" />
-</div>
+        <img className="w-166" src="1-1.png" alt="" />
+      </div>
 
 
 
