@@ -1,19 +1,23 @@
-import React from 'react'
-import img from '../public/img.png' // this code will import the img
-import Signup from './Component/signup' // this code will import the signup component
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import Signup from "./components/Signup.jsx";
+import Signin from "./components/Signin.jsx"; // تأكد الاسم والامتداد مطابقين لاسم الملف
 
-
-
-function App() {
-
-
+export default function App() {
   return (
-    <>
-        <img src={img} alt="" />
-        <Signup/>
-        <h1 className='text-3xl font-bold underline'/> 
-    </>
-  )
-}
+    <div className = "flex flex-col items-center justify-center">
+      <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Navigate to="/signup" replace />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login"  element={<Signin />} />
+        <Route path="*" element={<Navigate to="/signup" replace />} />
+      </Routes>
+    </BrowserRouter>
 
-export default App;
+
+
+      
+    </div>
+
+  );
+}
