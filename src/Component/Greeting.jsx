@@ -9,7 +9,7 @@ return(
 <p className="font-medium text-2xl mt-8 text-red-800">أسئلة سريعة , منافسة حامية , و متعة سعودية ما تنسى </p>
 
 <div>
-    <button className="border-1 rounded-md mt-12 bg-red-500  text-white px-6 py-3 text-sm">ابدأ اللعب !</button>
+    <button className="border-1 rounded-md mt-12 bg-red-500  text-white px-6 py-3 text-sm">ابدأ اللعب</button>
 </div>
 
 </div>
