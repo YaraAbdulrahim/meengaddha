@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import AuthLayout from "../layouts/AuthLayout.jsx";
 import { Link } from "react-router-dom";
 
-export default function Login() {
+export default function Signin() {
   const [showPwd, setShowPwd] = useState(false);
 
   const handleSubmit = (e) => {
