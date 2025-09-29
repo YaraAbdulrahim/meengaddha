@@ -1,8 +1,8 @@
 import React from 'react'
 import img from '../public/img.png' 
-import Header from './Component/Header'
-import Greeting from './Component/Greeting' 
-import GameDescription from './Component/GameDescription'
+import Header from './components/Header'
+import Greeting from './components/Greeting.jsx' 
+import GameDescription from './components/GameDescription.jsx'
 import Signup from "./components/Signup.jsx";
 import Signin from "./components/Signin.jsx"; 
 
