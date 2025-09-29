@@ -1,5 +1,4 @@
 import React from 'react'
-import img from '../public/img.png' 
 import Signup from "./components/Signup.jsx";
 import Signin from "./components/Signin.jsx";
 import { BrowserRouter, Routes, Route, Navigate,  } from 'react-router-dom';
