@@ -1,4 +1,5 @@
 import React from "react";
+
 function Greeting (){
 return(
 <div className="flex flex-col justify-center items-center" dir="rtl">
