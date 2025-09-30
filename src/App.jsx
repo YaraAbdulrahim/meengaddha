@@ -7,15 +7,18 @@ import GameSteps from './Component/GameSteps'
 
 function App() {
 
+
   return (
     <>
-      <div>
-        <Header/>
-        <Greeting/>
-        <GameDescription/>
-        <GameSteps/>
-        </div>      
 
+      <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Homepage/>} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login"  element={<Signin />} />
+        <Route path="*" element={<Navigate to="/signup" replace />} />
+      </Routes>
+    </BrowserRouter>
     </>
   )
 }
