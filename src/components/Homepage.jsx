@@ -1,6 +1,7 @@
 import Header from './Header.jsx'
 import Greeting from './Greeting.jsx' 
 import GameDescription from './GameDescription.jsx'
+import GameSteps from './components/GameSteps'
 
 export default function Homepage(){
 
@@ -9,6 +10,7 @@ export default function Homepage(){
             <Header />
             <Greeting />
             <GameDescription />
+            <GameSteps/>
 
         </>
     )
