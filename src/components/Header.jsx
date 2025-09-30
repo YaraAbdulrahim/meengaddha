@@ -15,26 +15,26 @@ function Header() {
           <button>
             <img src="Logo.png" alt="Logo" className="h-20" />
           </button>
-        <button className="bg-white text-red-500 rounded-2xl px-4 py-2 font-bold text-2xl ">
+        <button className="bg-white text-red-600 rounded-2xl px-4 py-2 font-bold text-2xl ">
             الرئيسية
           </button>
         </div>
 
         {/* القسم اليسار (الأزرار) */}
         <div className="flex items-center gap-4">
-          <button className="text-red-500 rounded-2xl px-4 py-2 font-bold text-2xl">
+          <button className="text-red-600 rounded-2xl px-4 py-2 font-bold text-2xl">
             طريقة اللعب
           </button>
-          <button className="bg-white text-red-500 rounded-2xl px-4 py-2 font-bold text-2xl">
+          <button className="bg-white text-red-600 rounded-2xl px-4 py-2 font-bold text-2xl">
             الفئات
           </button>
-          <button className="text-red-500 rounded-2xl px-4 py-2 font-bold text-2xl">
+          <button className="text-red-600 rounded-2xl px-4 py-2 font-bold text-2xl">
             تواصل معنا
           </button>
-          <button className="bg-white text-red-500 rounded-2xl px-4 py-2 font-bold text-2xl">
+          <button className="bg-white text-red-600 rounded-2xl px-4 py-2 font-bold text-2xl">
             التسجيل
           </button>
-          <button className="bg-red-500 text-white rounded-2xl px-4 py-2 font-bold text-2xl">
+          <button className="bg-red-600 text-white rounded-2xl px-4 py-2 font-bold text-2xl">
          الاشتراك
           </button>
         </div>

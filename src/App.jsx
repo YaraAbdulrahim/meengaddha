@@ -1,7 +1,8 @@
-import react  from 'react'
-import Header from './Component/Header'
-import Greeting from './Component/Greeting' 
-import GameDescription from './Component/GameDescription'
+import React  from 'react'
+import Signin from "./components/Signin.jsx";
+import Signup from "./components/Signup.jsx";
+import { BrowserRouter, Routes, Route, Navigate,  } from 'react-router-dom';
+import Homepage from './components/Homepage.jsx'
 
 
 function App() {
