@@ -2,18 +2,18 @@ import React from "react";
 
 function GameDescription() {
   return (
-    <div className="flex flex-col" dir="rtl">
+    <div dir="rtl">
 
       {/* المربع الأحمر */}
-      <div className="border-4 w-full h-200 bg-red-500 border-red-500 mt-40 flex flex-col items-center">
+      <div className="border-4 w-full  bg-red-500 border-red-500 mt-40 flex flex-col items-center">
        
         {/* العنوان */}
-        <h1 className="font-bold text-white text-4xl text-center mt-10">
+        <h1 className="font-bold text-white text-lg md-text-2xl text-center mt-10">
           كوّن فريقك و ادخل التحدي و خلّي الكل يعرف مين قدها!
         </h1>
 
         {/* البوكسين البيضاء جنب بعض */}
-        <div className="flex space-x-50 mt-30">
+        <div className="flex flex-col md:flex-row md:justify-evenly gap-10 items-center w-full mt-30"> 
 
             
         <div className="border-2 border-white rounded-4xl bg-white w-130 h-100 flex flex-col items-center justify-start p-10">
