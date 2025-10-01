@@ -3,6 +3,7 @@ import Greeting from './Greeting.jsx'
 import GameDescription from './GameDescription.jsx'
 import GameSteps from './GameSteps'
 import Subscription from './Subscription'
+import CategoriesIntro from './CategoriesIntro'
 
 export default function Homepage(){
 
@@ -12,6 +13,7 @@ export default function Homepage(){
             <Greeting />
             <GameDescription />
             <GameSteps/>
+            <CategoriesIntro/>
             <Subscription/>
 
         </>
