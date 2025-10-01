@@ -4,9 +4,9 @@ function Subscription() {
   // مصفوفة الكاردات مع ألوان وصور
   const cards = [
     { id: 1,  name: "الرياضة", color: "bg-gray-500", image: "/images/card1.png" },
-    { id: 2,  name: "الرياضة", color: "bg-blue-500", image: "/images/card2.png" },
-    { id: 3,  name: "الرياضة",color: "bg-green-500", image: "/images/card3.png" },
-    { id: 4,  name: "الرياضة",color: "bg-yellow-500", image: "/images/card4.png" },
+    { id: 2,  name: "السعودية", color: "bg-blue-500", image: "/images/card2.png" },
+    { id: 3,  name: "السينما",color: "bg-green-500", image: "/images/card3.png" },
+    { id: 4,  name: "الثقافه",color: "bg-yellow-500", image: "/images/card4.png" },
     { id: 5,  name: "الرياضة",color: "bg-purple-500", image: "/images/card5.png" },
     { id: 6,  name: "الرياضة", color: "bg-pink-500", image: "/images/card6.png" },
     { id: 7,  name: "الرياضة", color: "bg-orange-500", image: "/images/card7.png" },
@@ -37,7 +37,7 @@ function Subscription() {
   const visibleCards = getVisibleCards();
 
   return (
-    <div className="flex flex-col justify-center items-center min-h-screen p-[20px]" dir="rtl">
+    <div className="flex flex-col justify-center items-center min-h-screen p-14" dir="rtl">
       {/* العنوان والفقرات */}
       <div className="text-center">
         <h1 className="text-red-900 font-bold text-lg sm:text-xl md:text-2xl lg:text-4xl">
@@ -63,10 +63,7 @@ function Subscription() {
 
 
 
-{/* Overlay أسود شفاف لتحسين وضوح النصوص فوق الصورة وجعلها مقروءة أكثر،
-    يعطي تأثير  للـ Card بدون إخفاء الصورة بالكامل */}
     
-      <div className="absolute inset-0 bg-black bg-opacity-25"></div>
 
       {/* عنوان الصوره*/}
       <h3 className="absolute top-4 left-1/2 transform -translate-x-1/2 text-red-500 font-bold text-lg sm:text-xl md:text-2xl">
