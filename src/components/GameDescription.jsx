@@ -5,7 +5,7 @@ function GameDescription() {
     <div className="flex flex-col" dir="rtl">
 
       {/* المربع الأحمر */}
-      <div className="border-4 w-full h-200 bg-red-500 border-red-500 mt-40 flex flex-col items-center">
+      <div className="border-4 w-full h-200 bg-red-600 border-red-600 mt-40 flex flex-col items-center">
        
         {/* العنوان */}
         <h1 className="font-bold text-white text-4xl text-center mt-10">
