@@ -40,9 +40,9 @@ function Subscription() {
     <div className="flex flex-col justify-center items-center min-h-screen p-14" dir="rtl">
       {/* العنوان والفقرات */}
       <div className="text-center">
-        <h1 className="text-red-900 font-bold text-lg sm:text-xl md:text-2xl lg:text-4xl">
+        <h1 className="text-red-900 font-bold text-lg  md:text-2xl">
         فئات مجانية كثيرة بانتظاركم – العبوا بلا حدود !     </h1>
-        <p className="text-red-700 font-medium text-lg sm:text-lg md:text-xl lg:text-2xl mt-4">
+        <p className="text-red-700 font-medium text-lg  md:text-xl  mt-4">
         لكن لا تنسوا… الفئات المميزه ما يفتحها الا المشتركين و اذا اشتركت ؟ تقدر تصنع فئتك الخاصة مع فريقك و تعيش التحدي بطريقتكم الخاصه !       </p>
       </div>
 
@@ -51,7 +51,7 @@ function Subscription() {
   {visibleCards.map((card) => (
     <div
       key={card.id}
-      className={`w-3/4 sm:w-1/2 md:w-1/3 lg:w-1/4 h-48 sm:h-64 md:h-72 lg:h-80 rounded-lg relative overflow-hidden ${card.color}`}
+      className={`w-3/4 md:w-1/3 h-48 md:h-72 rounded-lg relative overflow-hidden ${card.color}`}
     >
       <img
         src={card.image}
@@ -64,7 +64,7 @@ function Subscription() {
     
 
       {/* عنوان الصوره*/}
-      <h3 className="absolute top-4 left-1/2 transform -translate-x-1/2 text-red-500 font-bold text-lg sm:text-xl md:text-2xl">
+      <h3 className="absolute top-4 left-1/2 transform -translate-x-1/2 text-red-500 font-bold text-lg md:text-2xl">
           فئة {card.name}
       </h3>
      </div>
@@ -74,7 +74,7 @@ function Subscription() {
 
       {/* زر الاشتراك */}
       <div className="mt-12">
-        <button className="border border-red-600 rounded-md bg-red-600 text-white px-6 py-3 text-sm sm:text-base md:text-lg lg:text-xl font-bold">
+        <button className="border border-red-600 rounded-md bg-red-600 text-white px-6 py-3 text-sm md:text-lg  font-bold">
           اشترك!
         </button>
       </div>
