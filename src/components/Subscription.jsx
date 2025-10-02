@@ -51,7 +51,7 @@ function Subscription() {
   {visibleCards.map((card) => (
     <div
       key={card.id}
-      className={`w-3/4 md:w-1/3 h-48 md:h-72 rounded-lg relative overflow-hidden ${card.color}`}
+      className={`w-3/4 md:w-1/4 h-48 md:h-72 rounded-lg relative overflow-hidden ${card.color}`}
     >
       <img
         src={card.image}
