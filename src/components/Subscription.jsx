@@ -40,7 +40,7 @@ function Subscription() {
     <div className="flex flex-col justify-center items-center min-h-screen p-14" dir="rtl">
       {/* العنوان والفقرات */}
       <div className="text-center">
-        <h1 className="text-red-900 font-bold text-lg  md:text-2xl">
+        <h1 className="text-red-900 font-bold text-lg md:text-4xl">
         فئات مجانية كثيرة بانتظاركم – العبوا بلا حدود !     </h1>
         <p className="text-red-700 font-medium text-lg  md:text-xl  mt-4">
         لكن لا تنسوا… الفئات المميزه ما يفتحها الا المشتركين و اذا اشتركت ؟ تقدر تصنع فئتك الخاصة مع فريقك و تعيش التحدي بطريقتكم الخاصه !       </p>
