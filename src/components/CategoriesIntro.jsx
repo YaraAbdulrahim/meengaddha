@@ -7,7 +7,7 @@ function CategoriesIntro() {
         <div className="">
           <h1 className="text-2xl md:text-4xl font-bold text-center mt-5 md:mt-16  text-white">الفئات</h1>
           <p className="text-lg md:text-xl font-medium text-center mt-3 md:mt-5 text-white">
-            جهزوا فريقكم! فئات متنوعة قدامكم، اختاروا بحكمة… لأن كل اختيار هو سر قوتكم للفوز!
+            جهزوا فريقكم ! فئات متنوعة قدامكم،اختاروا بحكمة… لأن كل اختيار هو سر قوتكم للفوز !
           </p>
         </div>
       </div>

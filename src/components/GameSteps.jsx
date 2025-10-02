@@ -22,7 +22,7 @@ function GameSteps() {
               كوّنوا فريقكم
             </h1>
             <p className="font-medium text-lg  md:text-xl text-red-700 text-center mt-8">
-              حددوا مين معاكم واجتمعوا.. استعدوا لأقوى تحدي في جمعاتكم!
+              حددوا مين معاكم و اجتمعوا.. استعدوا لأقوى تحدي في جمعاتكم!
             </p>
           </div>
         </div>
@@ -37,7 +37,7 @@ function GameSteps() {
               اختاروا الفئات
             </h1>
             <p className="font-medium text-lg  md:text-xl text-red-700 text-center mt-8">
-              كل فريق يختار اللي يحبه.. حضّروا نفسكم للمعركة الثقافية والضحك!
+            كل فريق يختار اللي يحبه.. حضّروا نفسكم للمعركة الثقافية والضحك !
             </p>
           </div>
         </div>
@@ -52,8 +52,8 @@ function GameSteps() {
               عيشوا الحماس
             </h1>
             <p className="font-medium text-lg  md:text-xl text-red-700 text-center mt-8">
-              شغّلوا اللعبة على التلفزيون وتنافسوا واجمعوا أعلى النقاط
-              واستمتعوا مع كل سؤال!
+              شغّلوا اللعبة على التلفزيون و تنافسوا و اجمعوا اعلى النقاط
+              و استمتعوا مع كل سؤال !
             </p>
           </div>
         </div>

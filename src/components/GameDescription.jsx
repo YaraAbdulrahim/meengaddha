@@ -18,7 +18,7 @@ function GameDescription() {
             
         <div className="border-2 border-white rounded-4xl bg-white w-80 md:w-130 h-80 md:h-100 flex flex-col items-center justify-start p-10">
          <h1 className="font-bold text-red-900 text-center text-lg md:text-4xl">
-         التحدي بدأ.. فوزكم قدامكم!
+          التحدي بدأ.. فوزكم قدامكم !
          </h1>
 
          <p className="font-medium text-lg md:xl text-red-700 text-center mt-20">
@@ -29,12 +29,12 @@ function GameDescription() {
 
           <div className="border-2 border-white rounded-4xl bg-white w-80 md:w-130 h-80 md:h-100 flex flex-col items-center justify-start p-10">
           <h1 className="font-bold text-red-900 text-center text-lg md:text-4xl ">
-          8 فئات مجانيه مليانة تحدي ومعرفة!
+          فئات مجانيه مليانة تحدي ومعرفة !
           </h1>
 
          <p className="font-medium text-lg md:xl text-red-700 text-center mt-20">
          اختاروا عدد الأسئلة اللي يناسبكم
-         (4، 6، 8) و استعدوا مع 4 وسائل مساعدة لكل فريق تخلي كل جولة ممتعة من الإثارة والحماس! 
+        (4، 6، 8) و استعدوا مع 3 وسائل مساعدة لكل فريق تخلي كل جولة ممتعة من الاثارة والحماس ! 
          </p>
 
 
