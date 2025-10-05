@@ -91,7 +91,7 @@ function Header() {
 
       {/* الصورة الثانية */}
       <div className="absolute left-0 md:left-20 bottom-16 md:bottom-0 z-20">
-        <img className="w-60 md:w-150" src="1-1.png" alt="" />
+        <img className="w-60 md:w-150" src="صورة الاستفهامات مع السيوف.png" alt="" />
       </div>
     </div>
   );

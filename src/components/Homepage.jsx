@@ -4,6 +4,8 @@ import GameDescription from './GameDescription.jsx'
 import GameSteps from './GameSteps'
 import Subscription from './Subscription'
 import CategoriesIntro from './CategoriesIntro'
+import Lifelines from './Lifelines'
+
 
 export default function Homepage(){
 
@@ -15,6 +17,7 @@ export default function Homepage(){
             <GameSteps/>
             <CategoriesIntro/>
             <Subscription/>
+            <Lifelines/>
 
         </>
     )
