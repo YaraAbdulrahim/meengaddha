@@ -3,14 +3,14 @@ import React, { useState, useEffect } from "react";
 function Subscription() {
   // مصفوفة الكاردات مع ألوان وصور
   const cards = [
-    { id: 1,  name: "الرياضة", color: "bg-gray-500", image: "/images/card1.png" },
-    { id: 2,  name: "السعودية", color: "bg-blue-500", image: "/images/card2.png" },
-    { id: 3,  name: "السينما",color: "bg-green-500", image: "/images/card3.png" },
-    { id: 4,  name: "الثقافه",color: "bg-yellow-500", image: "/images/card4.png" },
-    { id: 5,  name: "الرياضة",color: "bg-purple-500", image: "/images/card5.png" },
-    { id: 6,  name: "الرياضة", color: "bg-pink-500", image: "/images/card6.png" },
-    { id: 7,  name: "الرياضة", color: "bg-orange-500", image: "/images/card7.png" },
-    { id: 8,  name: "الرياضة", color: "bg-indigo-500", image: "/images/card8.png" },
+    { id: 1,  name: "لهجات سعودية", color: "bg-gray-500", image: "صورة فئة اللهجات.jpg" },
+    { id: 2,  name: "ولا كلمة", color: "bg-blue-500", image: "صورة فئة ولا كلمة.jpg" },
+    { id: 3,  name: " مسلسلات و افلام سعودية",color: "bg-green-500", image: "صورة فئة المسلسلات و الافلام.jpg" },
+    { id: 4,  name: " اغاني و شعر",color: "bg-yellow-500", image: "صورة فئة الاغاني والشعر.jpg" },
+    { id: 5,  name: "اكلات سعودية",color: "bg-purple-500", image: "صورة فئة الاكلات.jpg" },
+    { id: 6,  name: "امثلة شعبية", color: "bg-pink-500", image: "صورة فئة الامثلة.jpg" },
+    { id: 7,  name: "براندات و شركات سعودية", color: "bg-orange-500", image: "صورة فئة البراندات و الشركات.jpg" },
+    { id: 8,  name: "تاريخ السعودية", color: "bg-indigo-500", image: "صورة فئة التاريخ.jpg" },
   ];
 
   const [index, setIndex] = useState(0);
@@ -46,27 +46,29 @@ function Subscription() {
         لكن لا تنسوا… الفئات المميزه ما يفتحها الا المشتركين و اذا اشتركت ؟ تقدر تصنع فئتك الخاصة مع فريقك و تعيش التحدي بطريقتكم الخاصه !       </p>
       </div>
 
+
+
       {/* Carousel الكاردات */}
+
+    
       <div className="flex flex-wrap gap-4 overflow-hidden w-full mt-12 justify-center">
   {visibleCards.map((card) => (
     <div
       key={card.id}
       className={`w-3/4 md:w-1/4 h-48 md:h-72 rounded-lg relative overflow-hidden ${card.color}`}
     >
+        {/*في  مربع العنوان الأبيض بداية الكارد */}
+      <div className="absolute top-60 left-0 w-full  border-gray-100 bg-gray-100 bg-opacity-90 py-2 text-center rounded-b-md z-10">
+      <h3 className="text-red-900 font-bold text-lg md:text-2xl">
+              {card.name}
+      </h3>
+     </div>
+
       <img
         src={card.image}
         alt={`Card ${card.id}`}
-        className="w-full h-full object-cover"
-      />
-
-
-
-    
-
-      {/* عنوان الصوره*/}
-      <h3 className="absolute top-4 left-1/2 transform -translate-x-1/2 text-red-500 font-bold text-lg md:text-2xl">
-          فئة {card.name}
-      </h3>
+        className="w-full h-full object-cover "
+      />     
      </div>
   ))}
 </div>
@@ -74,7 +76,7 @@ function Subscription() {
 
       {/* زر الاشتراك */}
       <div className="mt-12">
-        <button className="border border-red-600 rounded-md bg-red-600 text-white px-6 py-3 text-sm md:text-lg  font-bold">
+      <button className="border border-red-600 rounded-full w-48 bg-red-600 btn-text  text-white px-6 py-3 text-lg  md:text-lg font-medium mt-12">
           اشترك!
         </button>
       </div>
