@@ -7,9 +7,9 @@ export default function Signin() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const fd = new FormData(e.currentTarget);
-    const email = fd.get("email")?.toString().trim();
-    const password = fd.get("password")?.toString();
+    const FormData = new FormData(e.currentTarget);
+    const email = FormData.get("email")?.toString().trim();
+    const password = FormData.get("password")?.toString();
 
     // TODO: استدعاء API الدخول
     console.log({ email, password });

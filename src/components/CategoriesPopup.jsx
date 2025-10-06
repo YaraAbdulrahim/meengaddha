@@ -1,227 +1,136 @@
-// src/components/CategoriesPopup.jsx
-import React, { useEffect, useMemo, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+/* represents categories inside the accordion.
+   store chosen categories inside (Set).
+   open modal (the actual pop up) when all 8
+   categories are selected,
+   and prevent scroll when modal is opened.
+   when game starts, send data to (state) */
+
+import React, { useEffect, useState } from "react"; // useState: to manage state, useEffect: side effects, useRef: DOM refs
+import { useNavigate } from "react-router-dom"; // useNavigate: to navigate programmatically
 import data from "../data/categories.json";
+import Categories from "./Categories.jsx";
+import Accordion from "./Accordion.jsx";
+import { Modal } from "./modal.jsx";
 
-
-
-/** صفحة اختيار الفئات + بوب-أب إعداد اللعبة */
 export default function CategoriesPopup() {
-  const nav = useNavigate();
+  const nav = useNavigate(); // to navigate to /play with state
 
-  // مجموعة الفئات المختارة (حسب العنوان)
-  const [selected, setSelected] = useState(new Set());
-  const total = selected.size;
+  const [selected, setSelected] = useState(new Set()); // choosing the categories
+  const total = selected.size; // total number of selected categories (= 8)
+  const [open, setOpen] = useState(false); // modal state for pop-up
 
-  // نعرض البوب-أب فقط عند اكتمال 8
-  const [open, setOpen] = useState(false);
+  // categories data from json file (no useMemo now)
+  const collections = data ?? [];
+
+  // open/close modal (auto):
   useEffect(() => {
+    // open the modal only when 8 categories are selected
     if (total === 8) setOpen(true);
+    // close the modal if less than 8 categories are selected
     else if (total < 8 && open) setOpen(false);
-  }, [total]); // eslint-disable-line
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [total]);
 
-  // قائمة مسطّحة لسهولة الرسم (تبقى محافظ على المجموعات)
-  const groups = useMemo(() => data ?? [], []);
+  // prevent background scrolling when modal is open:
+  useEffect(() => {
+    if (!open) return; // if modal is not open, do nothing
+    const prev = document.body.style.overflow; // remember previous style
+    document.body.style.overflow = "hidden"; // disable scrolling
+    return () => {
+      // restore when modal unmounts or closes
+      document.body.style.overflow = prev;
+    };
+  }, [open]);
 
+  // toggle category selection:
   const toggle = (title) => {
+    // update selected categories
     setSelected((prev) => {
-      const next = new Set(prev);
-      if (next.has(title)) next.delete(title);
-      else if (next.size < 8) next.add(title);
+      const next = new Set(prev); // avoid mutating state directly
+      if (next.has(title)) next.delete(title); // if already selected, remove it
+      else if (next.size < 8) next.add(title); // if less than 8 selected, add it
       return next;
     });
   };
 
   return (
-    <div className="mx-auto max-w-5xl px-4 py-8" dir="rtl">
-      <header className="mb-6 text-center">
-        <h1 className="text-2xl font-extrabold text-red-600">
-          اختاروا ثمانية فئات وابدأوا اللعب
-        </h1>
-        <p className="mt-2 text-sm text-neutral-600">
-          المختارة: <b className="text-red-600">{total}</b> / 8
-        </p>
-      </header>
+    <div className="w-full min-h-screen px-4 py-6" dir="rtl">
 
-      {/* عرض المجموعات */}
-      <div className="space-y-8">
-        {groups.map((group) => (
-          <section key={group.group}>
-            <h2 className="mb-3 text-lg font-bold text-neutral-800">{group.group}</h2>
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-              {group.items.map((it) => {
-                const title = typeof it === "string" ? it : it.title;
-                const img = typeof it === "string" ? undefined : it.img;
-                return (
-                  <CategoryCard
+      {/* fade effect when modal is open: */}
+      <div
+        className={`transition-opacity duration-200 ${
+          open ? "opacity-60" : "opacity-100"
+        }`}
+      >
+        {/* header with back button and title: */}
+        <div className="mb-4 flex items-center gap-2 text-neutral-500">
+          <button
+            onClick={() => history.back()}
+            aria-label="رجوع"
+            className="rounded-lg px-2 py-1 hover:bg-neutral-100"
+          >
+            ↤
+          </button>
+        </div>
+
+        {/* main header with title */}
+        <header className="mb-3 text-center">
+          <h1 className="text-2xl font-extrabold text-red-600">
+            اختاروا ثمانية فئات وابدأوا اللعب
+          </h1>
+          {/* pic here later */}
+        </header>
+
+        {/* list of collections (accordions) */}
+
+        <div className="space-y-3 w-100 md:w-150 lg:w-250 max-w-5xl mx-auto">
+
+          
+          {collections.map((col) => (
+            <Accordion
+              key={col.collection}
+              title={
+                <span className="text-sm font-bold text-neutral-800">
+                  {col.collection}
+                </span>
+              }
+              // no defaultOpen → all closed by default
+            >
+              <div className="grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+  {/* Cards */}
+                {col.items.map(({ title, img }) => (
+                  <Categories
                     key={title}
                     title={title}
                     img={img}
                     selected={selected.has(title)}
                     onToggle={() => toggle(title)}
                   />
-                );
-              })}
-            </div>
-          </section>
-        ))}
-      </div>
-
-      {/* أزرار تحكّم */}
-      <div className="sticky bottom-0 mt-8 bg-gradient-to-t from-white pt-4">
-        <div className="flex items-center justify-between gap-3">
-          <button
-            type="button"
-            onClick={() => setSelected(new Set())}
-            className="flex-1 rounded-2xl border border-neutral-300 px-4 py-2 font-semibold text-neutral-700 hover:bg-neutral-100"
-          >
-            إعادة الضبط
-          </button>
-          <button
-            type="button"
-            disabled={total !== 8}
-            onClick={() => setOpen(true)}
-            className={`flex-1 rounded-2xl px-4 py-2 font-bold text-white transition
-              ${total === 8 ? "bg-red-600 hover:bg-red-700" : "bg-neutral-300 cursor-not-allowed"}`}
-          >
-            التالي
-          </button>
+                ))}
+              </div>
+            </Accordion>
+          ))}
         </div>
       </div>
 
-      {/* البوب-أب */}
-      <SetupModal
-        open={open}
-        onClose={() => setOpen(false)}
-        onStart={(payload) => {
-          setOpen(false);
-          nav("/play", {
-            state: {
-              ...payload,
-              categories: Array.from(selected),
-            },
-          });
-        }}
-      />
+   
+
+      {/* modal component, only rendered when (open) is true: */}
+      {open && (
+        <Modal
+          onClose={() => setOpen(false)} // close modal
+          onStart={(payload) => {
+            setOpen(false);
+            // navigate to /play with selected categories and other payload data
+            nav("/play", {
+              state: { ...payload, categories: Array.from(selected) },
+            });
+          }}
+        />
+      )}
     </div>
   );
 }
 
-/** البوب-أب نفسه (مستقل داخل نفس الملف) */
-function SetupModal({ open, onClose, onStart }) {
-  const boxRef = useRef(null);
 
-  // حقول النموذج
-  const [gameName, setGameName] = useState("");
-  const [teamA, setTeamA] = useState("");
-  const [teamB, setTeamB] = useState("");
-  const [qCount, setQCount] = useState(6);
 
-  const valid = gameName.trim() && teamA.trim() && teamB.trim() && [4, 6, 8].includes(Number(qCount));
-
-  // إغلاق بـ ESC + فوكس أولي
-  useEffect(() => {
-    if (!open) return;
-    const onKey = (e) => e.key === "Escape" && onClose?.();
-    window.addEventListener("keydown", onKey);
-
-    setTimeout(() => boxRef.current?.focus(), 0);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [open, onClose]);
-
-  if (!open) return null;
-
-  return (
-    <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="setup-title"
-      onClick={onClose}
-    >
-      <div
-        ref={boxRef}
-        tabIndex={-1}
-        onClick={(e) => e.stopPropagation()}
-        className="w-full max-w-lg rounded-2xl bg-white p-5 shadow-xl ring-1 ring-neutral-200"
-      >
-        <h3 id="setup-title" className="mb-3 text-center text-lg font-extrabold text-neutral-800">
-         اسم اللعبة  
-        </h3>
-
-        {/* عدد الأسئلة */}
-        <div className="mb-4">
-          <label className="mb-2 block text-xs font-semibold text-neutral-700">عدد الأسئلة</label>
-          <div className="grid grid-cols-3 gap-2">
-            {[4, 6, 8].map((n) => (
-              <button
-                key={n}
-                type="button"
-                onClick={() => setQCount(n)}
-                className={`rounded-xl border px-3 py-2 text-sm font-bold
-                  ${qCount === n ? "border-red-600 text-red-600" : "border-neutral-300 text-neutral-700"}`}
-                aria-pressed={qCount === n}
-              >
-                {n}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* الحقول */}
-        <div className="grid grid-cols-2 gap-3">
-          <div className="col-span-2">
-            <label className="mb-1 block text-xs font-semibold text-neutral-700">اسم اللعبة</label>
-            <input
-              className="w-full rounded-xl border border-neutral-300 px-3 py-2 outline-none focus:border-red-600"
-              placeholder="مثال"
-              value={gameName}
-              onChange={(e) => setGameName(e.target.value)}
-            />
-          </div>
-
-          <div>
-            <label className="mb-1 block text-xs font-semibold text-neutral-700">الفريق الأول</label>
-            <input
-              className="w-full rounded-xl border border-neutral-300 px-3 py-2 outline-none focus:border-red-600"
-              placeholder="مثال"
-              value={teamA}
-              onChange={(e) => setTeamA(e.target.value)}
-            />
-          </div>
-
-          <div>
-            <label className="mb-1 block text-xs font-semibold text-neutral-700">الفريق الثاني</label>
-            <input
-              className="w-full rounded-xl border border-neutral-300 px-3 py-2 outline-none focus:border-red-600"
-              placeholder="مثال: النسور"
-              value={teamB}
-              onChange={(e) => setTeamB(e.target.value)}
-            />
-          </div>
-        </div>
-
-        {/* الأزرار */}
-        <div className="mt-5 flex gap-3">
-          <button
-            type="button"
-            onClick={onClose}
-            className="flex-1 rounded-xl border border-neutral-300 px-4 py-2 font-semibold text-neutral-700 hover:bg-neutral-100"
-          >
-            إلغاء
-          </button>
-          <button
-            type="button"
-            disabled={!valid}
-            onClick={() => valid && onStart({ gameName, teamA, teamB, qCount: Number(qCount) })}
-            className={`flex-1 rounded-xl px-4 py-2 font-bold text-white ${
-              valid ? "bg-red-600 hover:bg-red-700" : "bg-neutral-300 cursor-not-allowed"
-            }`}
-          >
-            ابدأ اللعبة
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-}

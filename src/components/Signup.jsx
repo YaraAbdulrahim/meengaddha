@@ -8,9 +8,9 @@ export default function Signup() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const fd = new FormData(e.currentTarget);
-    const pwd = fd.get("password")?.toString();
-    const pwd2 = fd.get("password2")?.toString();
+    const FormData = new FormData(e.currentTarget);
+    const pwd = FormData.get("password")?.toString();
+    const pwd2 = FormData.get("password2")?.toString();
 
     if (pwd !== pwd2) return alert("كلمتا السر غير متطابقتين");
     // TODO: استدعاء API التسجيل
