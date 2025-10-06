@@ -17,17 +17,19 @@ function GameDescription() {
 
             
         <div className="border-2 border-white rounded-4xl bg-white w-130 h-100 flex flex-col items-center justify-start p-10">
-         <h1 className="font-bold text-red-900 text-center text-3xl">
+         <h1 className="font-bold text-red-800 text-center text-3xl">
          التحدي بدأ.. فوزكم قدامكم!
          </h1>
 
-         <p className="font-medium text-2xl text-red-700 text-center mt-20">
+         <p className="font-medium text-2xl text-red-500 text-center mt-20">
+
           اختبروا معلوماتكم في جو مليان تحدي و حماس !! 
           كل سؤال يرفع مستواكم اجمعوا أعلى النقاط و في النهاية؟ فوزوا واستمتعوا بالانتصار!
           </p>
           </div>
 
           <div className="border-2 border-white rounded-4xl bg-white w-130 h-100 flex flex-col items-center justify-start p-10">
+
           <h1 className="font-bold text-red-900 text-center text-3xl">
           8 فئات مجانيه مليانة تحدي ومعرفة!
           </h1>
