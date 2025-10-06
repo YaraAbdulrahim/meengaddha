@@ -6,6 +6,12 @@ import Signup from "./components/Signup.jsx";
 import Signin from "./components/Signin.jsx";
 import CategoriesPopup from "./components/CategoriesPopup.jsx";
 import { Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate,  } from 'react-router-dom';
+import Homepage from './components/Homepage.jsx'
+
+
+function App() {
+
 
 export default function App() {
   return (
@@ -42,6 +48,7 @@ export default function App() {
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </div>
+
     </>
   );
 }
