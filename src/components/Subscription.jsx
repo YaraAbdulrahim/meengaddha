@@ -57,8 +57,8 @@ function Subscription() {
       key={card.id}
       className={`w-3/4 md:w-1/4 h-48 md:h-72 rounded-lg relative overflow-hidden ${card.color}`}
     >
-        {/*في  مربع العنوان الأبيض بداية الكارد */}
-      <div className="absolute top-60 left-0 w-full  border-gray-100 bg-gray-100 bg-opacity-90 py-2 text-center rounded-b-md z-10">
+        {/*في  مربع العنوان الأبيض نهاية الكارد */}
+      <div className="absolute md:top-60 top-36 left-0 w-full  border-gray-100 bg-gray-100 bg-opacity-90 md:py-2 py-3 text-center rounded-b-md z-10">
       <h3 className="text-red-900 font-bold text-lg md:text-2xl">
               {card.name}
       </h3>

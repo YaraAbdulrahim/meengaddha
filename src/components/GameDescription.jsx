@@ -21,7 +21,7 @@ function GameDescription() {
           التحدي بدأ.. فوزكم قدامكم !
          </h1>
 
-         <p className="font-normal text-xl md:text-2xl text-red-700 text-center mt-20">
+         <p className="font-normal text-xl md:text-2xl text-red-700 text-center md:mt-16 mt-4">
           اختبروا معلوماتكم في جو مليان تحدي و حماس !! 
           كل سؤال يرفع مستواكم اجمعوا أعلى النقاط و في النهاية؟ فوزوا واستمتعوا بالانتصار!
           </p>
@@ -32,7 +32,7 @@ function GameDescription() {
           فئات مجانيه مليانة تحدي ومعرفة !
           </h1>
 
-         <p className="font-normal text-xl md:text-2xl text-red-700 text-center mt-20">
+         <p className="font-normal text-xl md:text-2xl text-red-700 text-center md:mt-16 mt-4">
          اختاروا عدد الأسئلة اللي يناسبكم
         (4، 6، 8) و استعدوا مع 3 وسائل مساعدة لكل فريق تخلي كل جولة ممتعة من الاثارة والحماس ! 
          </p>
