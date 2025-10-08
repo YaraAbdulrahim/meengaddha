@@ -24,11 +24,11 @@ function Header() {
             <img
               src="لوقو مين قدها ؟.png"
               alt="Logo"
-              className="h-12 md:h-20"
+              className="h-12 md:h-20 cursor-pointer"
             />
           </button>
           {/* الرئيسية - تظهر من md وفوق */}
-          <button className="hidden md:block bg-white text-red-600 rounded-2xl px-4 py-2 font-medium text-lg md:text-2xl">
+          <button className="hidden md:block bg-white text-red-600 rounded-2xl px-3 py-2 cursor-pointer font-medium text-lg md:text-2xl">
             الرئيسية
           </button>
         </div>
@@ -45,19 +45,19 @@ function Header() {
 
         {/* الأزرار - تظهر من md وفوق */}
         <div className="hidden md:flex items-center gap-4">
-          <button className="text-red-600 rounded-2xl px-3 py-2 font-medium text-lg">
+          <button className="text-red-600 hover:bg-red-100 rounded-2xl px-3 py-2 cursor-pointer font-medium text-lg">
             طريقة اللعب
           </button>
-          <button className="bg-white text-red-600 rounded-2xl px-3 py-2 font-medium text-lg">
+          <button className="bg-white text-red-600 hover:bg-red-100 rounded-2xl px-3 py-2 cursor-pointer font-medium text-lg">
             الفئات
           </button>
-          <button className="text-red-600 rounded-2xl px-3 py-2 font-medium text-lg">
+          <button className="text-red-600 hover:bg-red-100 rounded-2xl px-3 py-2 cursor-pointer font-medium text-lg">
             تواصل معنا
           </button>
-          <button className="bg-white text-red-600 rounded-2xl px-3 py-2 font-medium text-lg">
+          <button className=" text-red-600 hover:bg-red-100 rounded-2xl px-3 py-2 cursor-pointer font-medium text-lg">
             التسجيل
           </button>
-          <button className="bg-red-600 text-white rounded-2xl px-3 py-2 font-medium text-lg">
+          <button className="bg-red-600 text-white rounded-2xl px-3 py-2 cursor-pointer font-medium text-lg">
             الاشتراك
           </button>
         </div>

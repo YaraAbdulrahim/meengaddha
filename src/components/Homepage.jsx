@@ -6,6 +6,7 @@ import GameSteps from './GameSteps'
 import Subscription from './Subscription'
 import CategoriesIntro from './CategoriesIntro'
 import Lifelines from './Lifelines'
+import Footer from './Footer'
 
 
 export default function Homepage(){
@@ -20,6 +21,7 @@ export default function Homepage(){
             <CategoriesIntro/>
             <Subscription/>
             <Lifelines/>
+            <Footer/>
 
         </>
     )
