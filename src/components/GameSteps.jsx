@@ -21,7 +21,7 @@ function GameSteps() {
 <div className={`relative w-3/4 md:w-1/4 h-48 md:h-72 border-4 border-gray-100 bg-gray-100 rounded-3xl p-2`}>
   {/* أيقونة أو صورة */}
   <div className="absolute -top-8 right-10 w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-red-600 flex items-center justify-center">
-    <img src="كونوا فريقكم.png" className="w-10 md:w-14 h-auto" />
+    <img src=" ايموجي المكعب.png" className="w-11 md:w-14 h-auto" />
   </div>
 
   {/* محتوى الكارد */}
@@ -39,7 +39,7 @@ function GameSteps() {
         {/* الكارد الثاني */}
 <div className="relative w-3/4 md:w-1/4 h-48 md:h-72 border-4 border-gray-100 bg-gray-100 rounded-3xl p-2">
   <div className="absolute -top-8 right-10 w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-red-600 flex items-center justify-center">
-    <img src="اختاروا الفئات.png" className="w-8 md:w-10 h-auto" />
+    <img src="ايموجي النار.png" className="w-12 md:w-14 h-auto" />
   </div>
   <div className="flex flex-col items-center justify-start mt-10">
     <h1 className="text-red-900 text-3xl md:text-4xl font-medium text-center">
@@ -54,7 +54,7 @@ function GameSteps() {
 {/* الكارد الثالث */}
 <div className="relative w-3/4 md:w-1/4 h-48 md:h-72 border-4 border-gray-100 bg-gray-100 rounded-3xl p-2">
   <div className="absolute -top-8 right-10 w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-red-600 flex items-center justify-center">
-    <img src="عيشوا الحماس.png" className="w-12 md:w-16 h-auto" />
+    <img src="ايموجي التارقت.png" className="w-14 md:w-16 h-auto" />
   </div>
   <div className="flex flex-col items-center justify-start mt-10">
     <h1 className="text-red-900 text-3xl md:text-4xl font-medium text-center">
