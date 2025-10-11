@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-function Subscription() {
+function SubscriptionLanding() {
   // مصفوفة الكاردات مع ألوان وصور
   const cards = [
     { id: 1,  name: "لهجات سعودية", color: "bg-gray-500", image: "صورة فئة اللهجات.jpg" },
@@ -84,4 +84,4 @@ function Subscription() {
   );
 }
 
-export default Subscription;
+export default SubscriptionLanding;
