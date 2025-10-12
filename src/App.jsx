@@ -57,10 +57,16 @@
 
 import React  from 'react'
 import CategoriesPopup from "./components/CategoriesPopup.jsx";
+
+
 import Signin from "./components/Signin.jsx";
 import Signup from "./components/Signup.jsx";
 import { BrowserRouter, Routes, Route, Navigate,  } from 'react-router-dom';
 import Homepage from './components/Homepage.jsx'
+import ChangePassword from "./components/ChangePassword.jsx";
+import Profile from "./components/Profile.jsx";
+
+
 
 
 function App() {
@@ -69,11 +75,24 @@ function App() {
   return (
     <>
 
-      
+     <div className="min-h-screen">
+
+        <Routes>
+          {/*  Main page: */}
+          <Route
+            path="/"
+            element={
+              <>
+               <div className="flex flex-col items-center justify-center"></div>
+            </div>
+              
       <Routes>
         <Route path="/" element={<Homepage/>} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login"  element={<Signin />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/profile/change-password" element={<ChangePassword />} />
+          
         <Route
             path="/categories"
             element={
@@ -84,7 +103,7 @@ function App() {
          />
         <Route path="*" element={<Navigate to="/signup" replace />} />
       </Routes>
-    
+   
     </>
   )
 }

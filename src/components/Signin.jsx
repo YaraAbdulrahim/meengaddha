@@ -2,14 +2,24 @@ import React, { useState } from "react";
 import AuthLayout from "../layouts/AuthLayout.jsx";
 import { Link } from "react-router-dom";
 
+// ✅ تحقق بسيط للإيميل: لازم فيه @ وينتهي بـ .com
+const isValidEmail = (email) => /^[\w.-]+@[\w.-]+\.com$/.test(email);
+
 export default function Signin() {
   const [showPwd, setShowPwd] = useState(false);
+  const [err, setErr] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const FormData = new FormData(e.currentTarget);
-    const email = FormData.get("email")?.toString().trim();
-    const password = FormData.get("password")?.toString();
+    setErr("");
+    const fd = new FormData(e.currentTarget);
+    const email = fd.get("email")?.toString().trim();
+    const password = fd.get("password")?.toString();
+
+    if (!isValidEmail(email)) {
+      setErr("⚠️ البريد يجب أن يحتوي على @ وينتهي بـ .com");
+      return;
+    }
 
     // TODO: استدعاء API الدخول
     console.log({ email, password });
@@ -48,6 +58,12 @@ export default function Signin() {
             {showPwd ? "إخفاء" : "إظهار"}
           </button>
         </div>
+
+        {err && (
+          <p className="text-center text-sm font-semibold text-red-600 bg-red-50 py-2 rounded-xl">
+            {err}
+          </p>
+        )}
 
         <div className="flex justify-end">
           <Link to="/signup" className="text-sm underline underline-offset-2">

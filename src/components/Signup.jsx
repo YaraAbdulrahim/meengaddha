@@ -5,20 +5,37 @@ import { Link } from "react-router-dom";
 export default function Signup() {
   const [showPwd, setShowPwd] = useState(false);
   const [showPwd2, setShowPwd2] = useState(false);
+  const [msg, setMsg] = useState("");
+
+  const isValidPassword = (pwd) => /^(?=.*[0-9!@#$%^&*]).{8,}$/.test(pwd);
+  const isValidEmail = (email) => /^[\w.-]+@[\w.-]+\.com$/.test(email);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const FormData = new FormData(e.currentTarget);
-    const pwd = FormData.get("password")?.toString();
-    const pwd2 = FormData.get("password2")?.toString();
+    setMsg("");
+    const FormDataObj = new FormData(e.currentTarget);
+    const email = FormDataObj.get("email")?.toString().trim();
+    const pwd = FormDataObj.get("password")?.toString();
+    const pwd2 = FormDataObj.get("password2")?.toString();
 
-    if (pwd !== pwd2) return alert("كلمتا السر غير متطابقتين");
-    // TODO: استدعاء API التسجيل
+    if (!isValidEmail(email))
+      return setMsg("⚠️ البريد يجب أن يحتوي على @ وينتهي بـ .com");
+    if (!isValidPassword(pwd))
+      return setMsg("⚠️ كلمة السر يجب أن تكون ٨ أحرف على الأقل وتحتوي رقم أو رمز");
+    if (pwd !== pwd2)
+      return setMsg("⚠️ كلمتا السر غير متطابقتين");
+
+    // 🔸 محاكاة فحص الإيميل الفريد
+    const usedEmails = ["test@gmail.com"];
+    if (usedEmails.includes(email))
+      return setMsg("❌ هذا البريد مستخدم بالفعل، جرّب بريد آخر.");
+
+    setMsg("✅ تم إنشاء الحساب بنجاح!");
   };
 
   return (
     <AuthLayout>
-     <h1 className="text-center text-2xl sm:text-3xl font-extrabold text-red-800 mb-8">
+      <h1 className="text-center text-2xl sm:text-3xl font-extrabold text-red-800 mb-8">
         يالله حيّه! <br className="sm:hidden" />
         انشئ حسابك و خلك قدها ✊🔥
       </h1>
@@ -65,6 +82,12 @@ export default function Signup() {
             {showPwd2 ? "إخفاء" : "إظهار"}
           </button>
         </div>
+
+        {msg && (
+          <p className="text-center text-sm font-semibold text-red-600 bg-red-50 py-2 rounded-xl">
+            {msg}
+          </p>
+        )}
 
         <div className="flex justify-end">
           <Link to="/login" className="text-sm underline underline-offset-2">
