@@ -55,57 +55,47 @@
 
 
 
-import React  from 'react'
-import CategoriesPopup from "./components/CategoriesPopup.jsx";
-
-
-import Signin from "./components/Signin.jsx";
-import Signup from "./components/Signup.jsx";
-import { BrowserRouter, Routes, Route, Navigate,  } from 'react-router-dom';
-import Homepage from './components/Homepage.jsx'
-import ChangePassword from "./components/ChangePassword.jsx";
-import Profile from "./components/Profile.jsx";
-
-
-
+import React from 'react';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import Homepage from './components/Homepage.jsx';
+import Signin from './components/Signin.jsx';
+import Signup from './components/Signup.jsx';
+import Profile from './components/Profile.jsx';
+import ChangePassword from './components/ChangePassword.jsx';
+import CategoriesPopup from './components/CategoriesPopup.jsx';
 
 function App() {
-
-
   return (
-    <>
 
-     <div className="min-h-screen">
-
+      <div className="min-h-screen">
         <Routes>
-          {/*  Main page: */}
+          {/* Main page */}
+          <Route path="/" element={<Homepage />} />
+
+          {/* Authentication */}
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Signin />} />
+
+          {/* Profile */}
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/profile/change-password" element={<ChangePassword />} />
+
+          {/* Categories */}
           <Route
-            path="/"
-            element={
-              <>
-               <div className="flex flex-col items-center justify-center"></div>
-            </div>
-              
-      <Routes>
-        <Route path="/" element={<Homepage/>} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/login"  element={<Signin />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/profile/change-password" element={<ChangePassword />} />
-          
-        <Route
             path="/categories"
             element={
-             <div className="flex gap-3 md:px-">
-               <CategoriesPopup />
-             </div>
-           }
-         />
-        <Route path="*" element={<Navigate to="/signup" replace />} />
-      </Routes>
+              <div className="flex gap-3 md:px-4">
+                <CategoriesPopup />
+              </div>
+            }
+          />
+
+          {/* Fallback route */}
+          <Route path="*" element={<Navigate to="/signup" replace />} />
+        </Routes>
+      </div>
    
-    </>
-  )
+  );
 }
 
 export default App;
