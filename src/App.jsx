@@ -6,11 +6,8 @@ import Signup from "./components/Signup.jsx";
 import Signin from "./components/Signin.jsx";
 import CategoriesPopup from "./components/CategoriesPopup.jsx";
 import { Routes, Route, Navigate } from "react-router-dom";
-import { BrowserRouter, Routes, Route, Navigate,  } from 'react-router-dom';
 import Homepage from './components/Homepage.jsx'
 
-
-function App() {
 
 
 export default function App() {
@@ -23,10 +20,7 @@ export default function App() {
             path="/"
             element={
               <>
-                <img src="/img.png" alt="" className="mx-auto my-4 max-h-32" />
-                <Header />
-                <Greeting />
-                <GameDescription />
+            <Homepage/>
               </>
             }
           />
